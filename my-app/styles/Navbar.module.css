@@ -1,5 +1,5 @@
 .container{
-    background-color: rgb(251, 157, 7);
+    background-color: rgb(251, 250, 250);
     height: 100px;
     padding: 0px 50px;
     display: flex;
@@ -25,7 +25,7 @@
 }
 
 .callButton{
-    background-color: rgb(248, 246, 244);
+    background-color: rgb(22, 12, 2);
     padding: 10px;
     border-radius: 50%; 
     width: 50px;
@@ -34,30 +34,31 @@
 
 .texts{
     margin-left: 20px;
-    color: aliceblue;
+    color: rgb(1, 9, 16);
 }
 
 .text:first-child{
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .text:last-child{
-    font-size: 20px;
+    font-size: 23px;
     font-weight: bold;
 }
 
 .list{
-    padding: 0;
+    padding: 0 0 0 130px;
     display: flex;
     align-items: center;
     list-style: none;
-    color: white ;
+    color: rgb(31, 4, 4) ;
 }
 
 .listItem{
     margin: 20px;
-    font-weight: 500 ;
+    font-weight: 600 ;
+    font-size: 23px;
 }
 
 .cart{
@@ -70,12 +71,12 @@
     right: -10px;
     width: 20px;
     height: 20px;
-    background-color: rgb(251, 245, 245);
+    background-color: rgb(10, 1, 1);
     border-radius: 50%;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: rgb(251, 157, 7);
+    color: rgb(249, 248, 246);
 }
