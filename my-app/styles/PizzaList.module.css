@@ -1,0 +1,28 @@
+.container{
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.desc{
+    font-size: 24px;
+    color: rgb(1, 10, 17);
+    width: 70%;
+}
+
+.wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title{
+    font-size: 44px;
+    font-weight: bold;
+    color: rgb(221, 101, 16);
+    text-align: center; 
+}
