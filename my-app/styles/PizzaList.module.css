@@ -3,12 +3,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff;
 }
 
 .desc{
     font-size: 24px;
-    color: rgb(1, 10, 17);
+    color: rgb(53, 54, 55);
     width: 70%;
 }
 
