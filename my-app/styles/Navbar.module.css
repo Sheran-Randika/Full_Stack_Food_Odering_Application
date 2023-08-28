@@ -80,3 +80,14 @@
     font-weight: bold;
     color: rgb(249, 248, 246);
 }
+
+@media screen and (max-width: 500px){
+    .item:nth-child(1){
+        flex: 3;
+    }
+
+    .item:nth-child(2){
+        display: none;
+    }
+}
+    
