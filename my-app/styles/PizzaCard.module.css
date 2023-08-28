@@ -29,3 +29,19 @@
     color: rgb(41, 43, 41);
     text-align: center; 
 }
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 100%;
+    }
+
+    .title{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .price , .desc{
+        font-size: 18px;
+        text-align: center;
+    }
+}

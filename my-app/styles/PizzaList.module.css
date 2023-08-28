@@ -1,4 +1,4 @@
-.container{
+ .container{
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
@@ -25,3 +25,17 @@
     color: rgb(221, 101, 16);
     text-align: center; 
 }
+
+@media screen and (max-width: 500px){
+    .title{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .desc{
+        font-size: 20px;
+        text-align: center;
+        width: 90%;
+    }
+}  
+    

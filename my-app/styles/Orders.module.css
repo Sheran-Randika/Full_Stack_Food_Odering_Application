@@ -22,7 +22,7 @@
 .name{
     font-size: 24px;
     font-weight: bold;
-    color: rgb(221, 101, 16);  
+    color: rgb(55, 25, 3);  
 }
 
 .total{
@@ -99,4 +99,66 @@
     flex-direction: column;
     align-items: center;
     opacity: 0.3;
+}
+
+@media screen and (max-width:500px){
+    .container{
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .trTitle{
+        display: none;
+    }
+    .tr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .wrapper{
+        width: 100%;
+    }
+    .id::before{
+        content: "Order ID: ";
+        font-weight: bold;
+    }
+    .name::before{
+        content: "Customer: ";
+        font-weight: bold;
+    }
+    .address::before{
+        content: "Address: ";
+        font-weight: bold;
+    }
+    .total::before{
+        content: "Total: ";
+        font-weight: bold;
+    }
+    .name{
+        font-size: 20px;
+    }
+
+    .row:last-child{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .done , .inProgress, .undone{
+        margin-bottom: 20px;
+    }
+    .inProgress{
+        animation: inProgress 1s ease infinite alternate;
+    }
+    
+    @keyframes inProgress{
+        0%{
+            transform: translateX(0px);
+        }
+        100%{
+            transform: translateX(10px);
+        }
+    }
 }

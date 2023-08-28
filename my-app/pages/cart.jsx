@@ -37,7 +37,7 @@ const Cart = () => {
                         <span className={styles.total}>RS. 1000</span>
                     </td>
                   </tr>
-                  <tr>
+                  <tr className={styles.tr}>
                     <td>
                         <div className={styles.imgContainer}>
                             <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
@@ -59,7 +59,7 @@ const Cart = () => {
                         <span className={styles.total}>RS. 1000</span>
                     </td>
                   </tr>
-                  <tr>
+                  <tr className={styles.tr}>
                     <td>
                         <div className={styles.imgContainer}>
                             <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
@@ -81,7 +81,7 @@ const Cart = () => {
                         <span className={styles.total}>RS. 1000</span>
                     </td>
                   </tr>
-                  <tr>
+                  <tr className={styles.tr}>
                     <td>
                         <div className={styles.imgContainer}>
                             <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />

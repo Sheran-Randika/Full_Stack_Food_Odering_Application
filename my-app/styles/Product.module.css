@@ -100,3 +100,49 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px){
+
+    .container{
+        text-align: center;
+        height: auto;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+     
+    .imgContainer{
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .title{
+        margin: 5px
+    }
+
+    .sizes{
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+    .ingredients{
+        flex-direction: column;
+    }
+
+    .option{
+        margin: 5px 0px;
+        font-size: 16px;
+    }
+
+    .checkbox{
+        width: 25px;
+        height: 25px;
+    }
+
+    .quantity ,.btn{
+        height: 50px;
+        padding: 10px 20px;
+    }
+
+
+}
+    

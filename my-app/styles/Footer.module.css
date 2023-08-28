@@ -37,3 +37,29 @@
     color: wheat;
     font-size: 36px;
  }
+
+ @media screen and (max-width: 500px) {
+      .container{
+        height: auto;
+        text-align: center;
+      }
+
+      .item:first-child{
+         display: none;
+      }
+
+      .item{
+        flex-direction: column;
+      }
+
+      .title{
+        font-size: 24px;
+      }
+      .text{
+        font-size: 16px;
+      }
+
+      .motto{
+        font-size: 28px;
+      }
+ }
