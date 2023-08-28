@@ -1,7 +1,20 @@
 import styles from '/styles/Orders.module.css'
 import Image from 'next/image';
+import { UilInvoice } from '@iconscout/react-unicons'
+import { UilCheckCircle } from '@iconscout/react-unicons' 
+import { UilTruck } from '@iconscout/react-unicons'
+import { UilMap } from '@iconscout/react-unicons'
+import { UilBox } from '@iconscout/react-unicons'
 
 const Order = () => {
+
+    const status= 0;
+
+    const statusClass = (index) => {
+        if(index - status<1)return styles.done
+        if(index - status===1)return styles.inProgress
+        if(index - status>1)return styles.undone
+    }; 
   return (
     <div className={styles.container}>
         <div className={styles.left}>
@@ -28,6 +41,36 @@ const Order = () => {
                     </td>
                   </tr>
               </table>
+            </div>
+            <div className={styles.row}>
+                <div className={statusClass(0)}>
+                    <UilInvoice className={styles.icon} size="50" />
+                    <span className={styles.statusText}>Payment</span>
+                    <div className={styles.checkedIcon}>
+                    <UilCheckCircle className={styles.checkedIcon} size="20" color="#00a003"/>
+                    </div>
+                </div>
+                <div className={statusClass(1)}>
+                    <UilBox className={styles.icon} size="50" />
+                    <span className={styles.statusText}>Preparing</span>
+                    <div className={styles.checkedIcon}>
+                    <UilCheckCircle className={styles.checkedIcon} size="20" color="#00a003"/>
+                    </div>
+                </div>
+                <div className={statusClass(2)}>
+                    <UilMap className={styles.icon} size="50" />
+                    <span className={styles.statusText}>On the way</span>
+                    <div className={styles.checkedIcon}>
+                    <UilCheckCircle className={styles.checkedIcon} size="20" color="#00a003"/>
+                    </div>
+                </div>
+                <div className={statusClass(3)}>
+                    <UilTruck className={styles.icon} size="50" />
+                    <span className={styles.statusText}>Delivered</span>
+                    <div className={styles.checkedIcon}>
+                    <UilCheckCircle className={styles.checkedIcon} size="20" color="#00a003"/>
+                    </div>
+                </div>
             </div>
         </div>
         <div className={styles.right}>
