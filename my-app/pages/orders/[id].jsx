@@ -7,7 +7,7 @@ import { UilMap } from '@iconscout/react-unicons'
 import { UilBox } from '@iconscout/react-unicons'
 
 const Order = () => {
-
+ 
     const status= 0;
 
     const statusClass = (index) => {
@@ -74,7 +74,7 @@ const Order = () => {
             </div>
         </div>
         <div className={styles.right}>
-        <div className={styles.wrapper}>
+            <div className={styles.wrapper}>
                   <h2 className={styles.title}>Cart Totals</h2>
                   <div className={styles.totalText}>
                       <b className={styles.totalTextTitle}>Subtotal:</b>Rs: 1000
@@ -86,7 +86,7 @@ const Order = () => {
                       <b className={styles.totalTextTitle}>Total:</b>Rs: 1100
                   </div>
                   <button disabled className={styles.btn}>PAID</button>
-              </div>
+            </div>
         </div>
     </div>
   )
