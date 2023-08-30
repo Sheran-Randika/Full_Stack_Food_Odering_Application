@@ -2,33 +2,33 @@ import mongoose from "mongoose";
 
 const ProductSchema = new mongoose.Schema({
     title: {
-        type: String,
-        required: [true, "Please provide a title"],
-        maxlength: [60, "Title cannot be more than 60 characters"],
+      type: String,
+      required: true,
+      maxlength: 60,
     },
     desc: {
-        type: String,
-        required: [true, "Please provide a description"],
-        maxlength: [200, "Description cannot be more than 200 characters"],
+      type: String,
+      required: true,
+      maxlength: 200,
     },
     img: {
-        type: String,
-        required: [true, "Please provide an image"],
+      type: String,
+      required: true,
     },
     prices: {
-        type: [Number],
-        required: [true, "Please provide a price"],
+      type: [Number],
+      required: true,
     },
     extraOptions: {
-        type: [
-            {
-                text: { type: String, required: [true, "Please provide a type"] },
-                price: { type: Number, required: [true, "Please provide a price"] },
-            },
-        ],
+      type: [
+        {
+          text: { type: String, required: true },
+          price: { type: Number, required: true },
+        },
+      ],
     },
-},
-    { timestamps: true }
+  },
+  { timestamps: true }
 );
 
-export default mongoose.models.Product || mongoose.model("Product", ProductSchema); 
+export default mongoose.models.Product || mongoose.model("Product", ProductSchema);
