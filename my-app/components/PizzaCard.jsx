@@ -1,14 +1,17 @@
 import Image from 'next/image';
 import styles from '../styles/PizzaCard.module.css'
+import Link from 'next/link';
 
-const PizzaCard = () => {
+const PizzaCard = ({pizza}) => {
   return (
     <div className={styles.container}>
-        <Image src="/img/pizza.jpg" width={300} height={300} alt="pizza" />
-        <h1 className={styles.title}>Pizza</h1>
-        <span className={styles.price}>Rp. 100.000</span>
+      <Link href={'/product/${pizza._id}'} passHref>
+        <Image src={pizza.img} width={300} height={300} alt="pizza" />
+      </Link>
+        <h1 className={styles.title}>{pizza.title}</h1>
+        <span className={styles.price}>Rs. {pizza.prices[0]}</span>
         <p className={styles.desc}>
-            A default paragraph is a fundamental element of written communication.
+          {pizza.desc}
         </p>
     </div>
   )
