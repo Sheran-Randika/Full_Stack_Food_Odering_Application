@@ -18,3 +18,5 @@ const PizzaCard = ({pizza}) => {
 }
 
 export default PizzaCard;
+
+

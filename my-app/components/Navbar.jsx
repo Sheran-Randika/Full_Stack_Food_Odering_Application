@@ -2,7 +2,7 @@
   import Image from "next/image";
   import { UilPhone,UilShoppingCart } from '@iconscout/react-unicons';
   import { useSelector } from "react-redux";
-import Link from "next/link";
+  import Link from "next/link";
 
 const Navbar = () => {
 

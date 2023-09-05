@@ -18,107 +18,46 @@ const Cart = () => {
                       <th>Quantity</th>
                       <th>Total</th>
                   </tr>
-                  <tr className={styles.tr}>
+                  {cart.products.map((product)=>(
+                  <tr className={styles.tr} key={product._id}>
                     <td>
                         <div className={styles.imgContainer}>
-                            <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
+                            <Image src={product.img} layout='fill' alt="pizza" objectFit='cover' />
                         </div>
                     </td>
                     <td>
-                        <span className={styles.name}>Pizza</span>
+                        <span className={styles.name}>{product.title}</span>
                     </td>
                     <td>
-                        <span className={styles.extras}>Double ingredients</span>
+                        <span className={styles.extras}>{product.extras.map(extra=>(
+                            <span key={extra._id}>{extra.text}, </span>
+                        ))}
+                        </span>
                     </td>
                     <td>
-                        <span className={styles.price}>RS. 1000</span>
+                        <span className={styles.price}>RS.{product.price}</span>
                     </td>
                     <td>
-                        <span className={styles.quantity}>1</span>
+                        <span className={styles.quantity}>{product.quantity}</span>
                     </td>
                     <td>
-                        <span className={styles.total}>RS. 1000</span>
+                        <span className={styles.total}>RS.{product.price*product.quantity}</span>
                     </td>
                   </tr>
-                  <tr className={styles.tr}>
-                    <td>
-                        <div className={styles.imgContainer}>
-                            <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
-                        </div>
-                    </td>
-                    <td>
-                        <span className={styles.name}>Pizza</span>
-                    </td>
-                    <td>
-                        <span className={styles.extras}>Double ingredients</span>
-                    </td>
-                    <td>
-                        <span className={styles.price}>RS. 1000</span>
-                    </td>
-                    <td>
-                        <span className={styles.quantity}>1</span>
-                    </td>
-                    <td>
-                        <span className={styles.total}>RS. 1000</span>
-                    </td>
-                  </tr>
-                  <tr className={styles.tr}>
-                    <td>
-                        <div className={styles.imgContainer}>
-                            <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
-                        </div>
-                    </td>
-                    <td>
-                        <span className={styles.name}>Pizza</span>
-                    </td>
-                    <td>
-                        <span className={styles.extras}>Double ingredients</span>
-                    </td>
-                    <td>
-                        <span className={styles.price}>RS. 1000</span>
-                    </td>
-                    <td>
-                        <span className={styles.quantity}>1</span>
-                    </td>
-                    <td>
-                        <span className={styles.total}>RS. 1000</span>
-                    </td>
-                  </tr>
-                  <tr className={styles.tr}>
-                    <td>
-                        <div className={styles.imgContainer}>
-                            <Image src="/img/pizza.jpg" layout='fill' alt="pizza" objectFit='cover' />
-                        </div>
-                    </td>
-                    <td>
-                        <span className={styles.name}>Pizza</span>
-                    </td>
-                    <td>
-                        <span className={styles.extras}>Double ingredients</span>
-                    </td>
-                    <td>
-                        <span className={styles.price}>RS. 1000</span>
-                    </td>
-                    <td>
-                        <span className={styles.quantity}>1</span>
-                    </td>
-                    <td>
-                        <span className={styles.total}>RS. 1000</span>
-                    </td>
-                  </tr>
+                  ))}
               </table>
         </div>
           <div className={styles.right}>
               <div className={styles.wrapper}>
                   <h2 className={styles.title}>Cart Totals</h2>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Subtotal:</b>Rs: 1000
+                      <b className={styles.totalTextTitle}>Subtotal:</b>Rs:{cart.total}
                   </div>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Shipping:</b>Rs: 100
+                      <b className={styles.totalTextTitle}>Shipping:</b>Rs: 0
                   </div>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Total:</b>Rs: 1100
+                      <b className={styles.totalTextTitle}>Total:</b>Rs:{cart.total}
                   </div>
                   <button className={styles.btn}>Proceed to checkout</button>
               </div>

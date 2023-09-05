@@ -81,7 +81,7 @@ const Product = ({pizza}) => {
                   ))} 
               </div>
                 <div className={styles.adds}>
-                    <input onChange={(e) => setQuantity(e.target.value)} type="number" defaultValue="1" className={styles.quantity} />
+                    <input onChange={(e) => setQuantity(e.target.value)} type="number" defaultValue={1} className={styles.quantity} />
                     <button className={styles.btn} onClick={handleClick}>Add to cart</button>
                 </div>
         </div> 
@@ -101,4 +101,4 @@ export const getServerSideProps = async ({ params }) => {
 };
 
 
-export default Product
+export default Product;
