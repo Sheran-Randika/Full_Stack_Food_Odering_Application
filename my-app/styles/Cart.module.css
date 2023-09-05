@@ -68,6 +68,24 @@
     font-size: 28px;
 }
 
+.paymentMethods{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.payBtn{
+    background-color: rgb(231, 160, 54);
+    color: rgb(60, 121, 6);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
 @media screen and (max-width: 500px) {
     .container{
         flex-direction: column;
