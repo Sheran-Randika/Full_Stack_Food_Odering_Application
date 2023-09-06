@@ -6,9 +6,9 @@ import { UilTruck } from '@iconscout/react-unicons'
 import { UilMap } from '@iconscout/react-unicons'
 import { UilBox } from '@iconscout/react-unicons'
 
-const Order = () => {
+const Order = ({order}) => {
  
-    const status= 0;
+    const status= order.status;
 
     const statusClass = (index) => {
         if(index - status<1)return styles.done
@@ -28,16 +28,16 @@ const Order = () => {
                   </tr>
                   <tr className={styles.tr}>
                     <td>
-                        <span className={styles.id}>7854873587468</span>
+                        <span className={styles.id}>{order._id}</span>
                     </td>
                     <td>
-                        <span className={styles.name}>Randika SR</span>
+                        <span className={styles.name}>{order.customer}</span>
                     </td>
                     <td>
-                        <span className={styles.address}>N0:34/4, Kelaniya ,Srilanka</span>
+                        <span className={styles.address}>{order.address}</span>
                     </td>
                     <td>
-                        <span className={styles.total}>RS. 1000</span>
+                        <span className={styles.total}>RS. {order.total}</span>
                     </td>
                   </tr>
               </table>
@@ -77,13 +77,13 @@ const Order = () => {
             <div className={styles.wrapper}>
                   <h2 className={styles.title}>Cart Totals</h2>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Subtotal:</b>Rs: 1000
+                      <b className={styles.totalTextTitle}>Subtotal:</b>Rs: {order.total}
                   </div>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Shipping:</b>Rs: 100
+                      <b className={styles.totalTextTitle}>Shipping:</b>Rs: 0
                   </div>
                   <div className={styles.totalText}>
-                      <b className={styles.totalTextTitle}>Total:</b>Rs: 1100
+                      <b className={styles.totalTextTitle}>Total:</b>Rs: {order.total}
                   </div>
                   <button disabled className={styles.btn}>PAID</button>
             </div>
@@ -91,5 +91,12 @@ const Order = () => {
     </div>
   )
 }
+
+export const getServerSideProps = async ({params}) => {
+    const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+    return {
+        props: { order: res.data },
+    };
+};
 
 export default Order
