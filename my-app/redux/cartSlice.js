@@ -15,7 +15,9 @@ const cartSlice =createSlice({
 
         },
         rest:(state)=>{
-            state = initialState;
+            state.products =[];
+            state.quantity = 0;
+            state.total = 0;
         },
     },
 });
