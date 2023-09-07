@@ -35,12 +35,12 @@ const OrderDetail = ({ total, createOrder }) => {
           <textarea
             rows={5}
             placeholder="Elton St. 505 NY"
-            type="text"
+            type="text" 
             className={styles.textarea}
             onChange={(e) => setAddress(e.target.value)}
           />
         </div>
-        <button className={styles.button} onClick={handleClick}>
+        <button className={styles.btn} onClick={handleClick}>
           Order
         </button>
       </div>
