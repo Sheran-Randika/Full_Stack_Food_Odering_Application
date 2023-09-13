@@ -20,7 +20,9 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
+          <Link href="/" passHref>
           <li className={styles.listItem}>HomePage</li>
+          </Link> 
           <li className={styles.listItem}>Products</li>
           <li className={styles.listItem}>Menu</li>
           <Image src="/img/logoN.png" alt="logo" width="120" height="85" />
