@@ -2,12 +2,16 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Admin.module.css'
 import axios from 'axios'
+import { useState } from 'react'
 
-const index = ({orders,products}) => {
+const Index = ({orders,products}) => {
 
+    const [pizzaList, setPizzaList] = useState(products);
+    const [orderList, setorderList] = useState(orders);
     const handleDelete = async (id) => {
         try {
-            const res = await axios.delete(`http://localhost:3000/products/` + id);
+            const res = await axios.delete("http://localhost:3000/api/products/" + id);
+            setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
             console.log(res)
         } catch (error) {
             console.log(error)
@@ -88,4 +92,4 @@ export const getServerSideProps = async () => {
     };
 };
 
-export default index
+export default Index
