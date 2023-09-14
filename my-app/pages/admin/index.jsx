@@ -8,10 +8,21 @@ const Index = ({orders,products}) => {
 
     const [pizzaList, setPizzaList] = useState(products);
     const [orderList, setorderList] = useState(orders);
+    const status = ["preparing","On the way","delivered"]
     const handleDelete = async (id) => {
         try {
             const res = await axios.delete("http://localhost:3000/api/products/" + id);
             setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
+            console.log(res)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleStatus = async (id) => {
+        try {
+            const res = await axios.put("http://localhost:3000/api/orders/" + id);
+            setorderList(orderList.filter((order) => order._id !== id));
             console.log(res)
         } catch (error) {
             console.log(error)
@@ -62,18 +73,20 @@ const Index = ({orders,products}) => {
                         <th className={styles.th}>Actions</th>
                     </tr>
                 </  tbody>
-                <tbody>
+                {orderList.map(order=>(
+                <tbody key={order._id}>
                     <tr className={styles.trTitle}>
-                        <td className={styles.td}>{"6578868968997".slice(0,5)}...</td>
-                        <td className={styles.td}>Sheran Randika</td>
-                        <td className={styles.td}>Rs.50</td>
-                        <td className={styles.td}>Paid</td>
-                        <td className={styles.td}>Preparing</td>
+                        <td className={styles.td}>{order._id.slice(0,5)}...</td>
+                        <td className={styles.td}>{order.customer}</td>
+                        <td className={styles.td}>Rs.{order.total}</td>
+                        <td className={styles.td}>{order.method === 0 ? (<span>cash</span>) : (<span>paid</span>)}</td>
+                        <td className={styles.td}>{status[order.status]}</td>
                         <td className={styles.td}>
-                            <button className={styles.btn}>NextStage</button>
+                            <button className={styles.btn} onClick={()=>handleStatus(order._id)}>NextStage</button>
                         </td>
                     </tr>
                 </  tbody>
+                ))}
             </table>
         </div>         
     </div>
