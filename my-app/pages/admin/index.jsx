@@ -20,14 +20,23 @@ const Index = ({orders,products}) => {
     }
 
     const handleStatus = async (id) => {
+
+        const item = orderList.filter(order => order._id === id)[0];
+        const currentStatus = item.status;
+
         try {
-            const res = await axios.put("http://localhost:3000/api/orders/" + id);
-            setorderList(orderList.filter((order) => order._id !== id));
+            const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+                status : currentStatus + 1 ,
+            });
+            setorderList([ res.data,
+                ...orderList.filter((order) => order._id === id ),
+            ]);
+            // ? res.data : order)));
             console.log(res)
         } catch (error) {
-            console.log(error)
+            console.log(err);
         }
-    }
+    };
   return (
     <div className={styles.container}>
         <div className={styles.item}>
