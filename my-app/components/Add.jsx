@@ -10,11 +10,11 @@ const Add = ({setClose}) => {
     const [title,setTitle]=useState(null);
     const [desc,setDesc]=useState(null);
     const [prices,setPrices]=useState([]);
-    const [extraOption,setExtraOption]=useState([]);
+    const [extraOptions,setExtraOptions]=useState([]);
     const [extra,setExtra]=useState(null);
 
 
-    const changePrice = (e,index) => {
+    const changePrice = (e, index) => {
         const currentPrices = prices;
         currentPrices[index] = e.target.value; 
         setPrices(currentPrices);
@@ -25,10 +25,29 @@ const Add = ({setClose}) => {
     }
 
     const handleExtra = (e) => {
-        setExtraOption((prev)=> [...prev,extra]);
+        setExtraOptions((prev)=> [...prev,extra]);
     };
 
     const handleCreate = async (e) => {
+        const data = new FormData();
+        data.append("file",file);
+        data.append("upload_preset","uploads");
+        try{
+            const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/djhjdzbca/image/upload",data);
+            const {url} =uploadRes.data;
+            const newProduct = {
+                title,
+                desc,
+                prices,
+                extraOptions,
+                img:url,
+            };
+            await axios.post("http://localhost:3000/api/products",newProduct); 
+            setClose(true);
+            // console.log(uploadRes.data);
+        }catch(err){
+            console.log(err);
+        }
     }
   return (
     <div className={styles.container}>
@@ -81,7 +100,7 @@ const Add = ({setClose}) => {
                     </button>
                 </div>
                 <div className={styles.extraItems}>
-                    {extraOption.map((option)=>(
+                    {extraOptions.map((option)=>(
                             <span 
                             key={option.text} 
                             className={styles.extraText}>

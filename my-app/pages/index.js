@@ -9,7 +9,7 @@ import AddButton from '@/components/AddButton';
 import { useState } from 'react';
 
 export default function Home({pizzaList, admin}) {
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +36,7 @@ export const getServerSideProps = async (ctx) => {
   return {
     props: {
       pizzaList: res.data,
-      admin: admin,
+      admin,
     },
   };
 
