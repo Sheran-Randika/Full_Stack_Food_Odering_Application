@@ -8,14 +8,16 @@ const Index = ({orders,products}) => {
 
     const [pizzaList, setPizzaList] = useState(products);
     const [orderList, setorderList] = useState(orders);
-    const status = ["preparing","On the way","delivered"]
+    const status = ["preparing","On the way","delivered"];
+
     const handleDelete = async (id) => {
+        console.log(id);
         try {
             const res = await axios.delete("http://localhost:3000/api/products/" + id);
             setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
-            console.log(res)
-        } catch (error) {
-            console.log(error)
+            // console.log(res)
+        } catch (err) {
+            console.log(err)
         }
     }
 
@@ -29,10 +31,10 @@ const Index = ({orders,products}) => {
                 status : currentStatus + 1 ,
             });
             setorderList([ res.data,
-                ...orderList.filter((order) => order._id === id ),
+                ...orderList.filter((order) => order._id !== id ),
             ]);
             // ? res.data : order)));
-            console.log(res)
+            // console.log(res)
         } catch (error) {
             console.log(err);
         }
@@ -103,12 +105,12 @@ const Index = ({orders,products}) => {
 }
 
 export const getServerSideProps = async (ctx) => {
-    const myCookie =ctx.req?.cookies || " "; 
+    const myCookie =ctx.req?.cookies || ""; 
 
     if(myCookie.token !== process.env.TOKEN){
         return {
             redirect: {
-                destination: '/admin/login',
+                destination: "/admin/login",
                 permanent: false,
             },
         };
@@ -118,8 +120,8 @@ export const getServerSideProps = async (ctx) => {
 
     return {
         props: {
-            products: productRes.data,
-            orders: orderRes.data
+            orders: orderRes.data,
+            products: productRes.data
         }
     };
 };
