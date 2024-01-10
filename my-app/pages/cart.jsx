@@ -74,7 +74,6 @@ const Cart = () => {
                       ],
                     })
                     .then((orderId) => {
-                      // Your code here after create the order
                       return orderId;
                     });
                 }}
@@ -113,7 +112,7 @@ const Cart = () => {
                   <tr className={styles.tr} key={product._id}>
                     <td>
                         <div className={styles.imgContainer}>
-                            <Image src={product.img} layout='fill' alt="pizza" objectFit='cover' />
+                            <Image className={styles.imag} src={product.img} layout='fill' alt="pizza" objectFit='cover' />
                         </div>
                     </td>
                     <td>

@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from '../styles/PizzaList.module.css'
-import PizzaCard from './PizzaCard'
 
 const PizzaList = ({pizzaList}) => {
   return (
@@ -12,11 +11,7 @@ const PizzaList = ({pizzaList}) => {
           taste buds and leave you with lasting memories. 
           We look forward to hosting you at White House Restaurant.
           </p>
-          <div className={styles.wrapper}>
-            {pizzaList.map((pizza) => (
-            <PizzaCard key ={pizza._id} pizza={pizza}/>
-            ))}
-          </div>
+          
       </div>
   )
 }
