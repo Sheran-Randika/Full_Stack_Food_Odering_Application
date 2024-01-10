@@ -1,6 +1,5 @@
 import dbConnect from "@/utility/mongo";
 import Product from "@/models/Product";
- 
 
 export default async function handler(req, res) {
     
@@ -39,7 +38,6 @@ export default async function handler(req, res) {
   if (method === "DELETE") {
     if(!token || token !== process.env.token){
       return res.status(401).json("Not authenticated!")
-   
     }
     try {
       await Product.findByIdAndDelete(id);

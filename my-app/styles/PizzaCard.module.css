@@ -6,8 +6,11 @@
     align-items: center;
     justify-content: center;
     padding: 20px 40px;
-    cursor: pointer;
-         
+    cursor: pointer;      
+}
+
+.imag{
+    border-radius: 50%;
 }
 
 .title{

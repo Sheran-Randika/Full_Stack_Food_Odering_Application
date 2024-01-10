@@ -8,7 +8,9 @@
 .desc{
     font-size: 24px;
     color: rgb(53, 54, 55);
-    width: 70%;
+    width: 67%;
+    justify-content: center;
+    text-align: center;
 }
 
 .wrapper{
