@@ -53,7 +53,7 @@ const Add = ({setClose}) => {
     <div className={styles.container}>
         <div className={styles.wrapper}>
             <span className={styles.close} onClick={()=>setClose(true)}>X</span>
-            <h1>Adda a New Pizza</h1>
+            <h1>Adda a New Item</h1>
             <div className={styles.item}>
                 <label className={styles.label}>Choose an Image</label>
                 <input type="file" 

@@ -10,7 +10,7 @@ const Footer = () => {
       <div className={styles.item}>
         <div className={styles.card}>
           <h2 className={styles.motto}>
-            Pizza is the best food in the world
+          Warm ambiance welcomed hungry guests
           </h2>
         </div>
         <div className={styles.card}>
@@ -23,14 +23,14 @@ const Footer = () => {
             +94 47 1 22 222<br/>
           </p>
           <p className={styles.text}>
-            67/3. Nathuwal KM 26,<br/>
+            66/7. Walasmulla KM 26,<br/>
             Hambantota, Sri Lanka.<br/>
-            +94 47 1 22 222<br/>
+            +94 47 4 25 222<br/>
           </p>
           <p className={styles.text}>
-            67/3. Nathuwal KM 26,<br/>
+            4B/3. Galle KM 6,<br/>
             Hambantota, Sri Lanka.<br/>
-            +94 47 1 22 222<br/>
+            +94 47 5 12 222<br/>
           </p>
         </div>
         <div className={styles.card}>
